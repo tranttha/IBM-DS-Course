@@ -1,0 +1,36 @@
+theia@theia-tranthithuha:/home/project/myrepo$ git init
+**init**
+- used to create a new file once pointer is in a branch**
+__responds__
+Reinitialized existing Git repository in /home/project/myrepo/.git/
+theia@theia-tranthithuha:/home/project/myrepo$ git checkout -b newbranch
+Switched to a new branch 'newbranch'
+theia@theia-tranthithuha:/home/project/myrepo$ git branch
+  master
+* newbranch
+theia@theia-tranthithuha:/home/project/myrepo$ touch newbranchfile
+theia@theia-tranthithuha:/home/project/myrepo$ git add "newbranchfile"
+theia@theia-tranthithuha:/home/project/myrepo$ git commit -m "added nbf"
+[newbranch 256acc5] added nbf
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newbranchfile
+theia@theia-tranthithuha:/home/project/myrepo$ git revert HEAD --no-edit
+[newbranch 7c92032] Revert "added nbf"
+ Date: Fri Jul 12 08:45:15 2024 -0400
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 newbranchfile
+theia@theia-tranthithuha:/home/project/myrepo$ touch newgoodfile
+theia@theia-tranthithuha:/home/project/myrepo$ git add "newgoodfile"
+theia@theia-tranthithuha:/home/project/myrepo$ git commit -m "added ngf"
+[newbranch 89ac31c] added ngf
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newgoodfile
+theia@theia-tranthithuha:/home/project/myrepo$ git checkout master
+Switched to branch 'master'
+theia@theia-tranthithuha:/home/project/myrepo$ git merge newbranch
+Updating c5e3b26..89ac31c
+Fast-forward
+ newgoodfile | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newgoodfile
+theia@theia-tranthithuha:/home/project/myrepo$ 
