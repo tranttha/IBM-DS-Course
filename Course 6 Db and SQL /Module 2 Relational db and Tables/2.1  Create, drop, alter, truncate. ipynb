@@ -1,0 +1,12 @@
+# CREATE, DROP, ALTER, TRUNCATE PRACTICE QUESTION
+1. Create a new table in the database named Toys with attributes as ID (integer), Variety (variable length string), and Quantity (integer). Make sure the ID is not Null.
+
+2. Add the below-mentioned entries to the table using the INSERT statement.
+
+3. ALTER the length of 'Variety' in the table to 30 characters.
+
+4. TRUNCATE the table 'Toys'
+
+5. DROP the table 'Toys'
+
+
