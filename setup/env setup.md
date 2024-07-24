@@ -34,9 +34,10 @@ git commit -m *commit msg*
 # Results 
 *check list of current config with ***conda list*** 
 (ibm_ds_env) @tranttha ➜ /workspaces/IBM-DS-Course (main) $ conda list
+
 *response* packages in environment at /opt/conda/envs/ibm_ds_env:
-'#
-'# Name                    Version                   Build  Channel
+\#
+\# Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                        main  
 _openmp_mutex             5.1                       1_gnu  
 _r-mutex                  1.0.0               anacondar_1    r
