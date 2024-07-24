@@ -1,5 +1,5 @@
-
-## env setup (very tiresome, had no exp in setting up config from scratch):
+# env setup 
+#### (very tiresome, had no exp in setting up config from scratch):
 0. config from terminal of main
 1. Create & activate new Conda Environment:
 # conda **create --name** *name of the env*
