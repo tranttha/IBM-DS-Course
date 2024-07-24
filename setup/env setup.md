@@ -2,9 +2,9 @@
 #### (very tiresome, had no exp in setting up config from scratch):
 0. config from terminal of main
 1. Create & activate new Conda Environment:
-# conda **create --name** *name of the env*
+*syntax* conda **create --name** *name of the env*
 conda create --name ibm_ds_env python=3.10
-# conda activate *name of the env*
+*syntax* conda activate *name of the env*
 conda activate ibm_ds_env
 2. Install Python librabries:
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter notebook
@@ -20,7 +20,7 @@ conda install r-base=4.3.1
 conda install r-essentials
 conda install -c r r-ggplot2 r-dplyr r-tidyr r-shiny r-plotly r-data.table r-stringr
 
-## Saving config:
+# Saving config:
 If changes are made to your env: installing or updating packages,..., should commit these changes to version control so that you can track changes, share setup, or revert if needed.
 1. Update environment.yml:
 - Export Environment:
@@ -31,12 +31,12 @@ git add environment.yml
 git commit -m *commit msg*
 
 
-## Results 
+# Results 
 *check list of current config with ***conda list*** 
 (ibm_ds_env) @tranttha ➜ /workspaces/IBM-DS-Course (main) $ conda list
-# packages in environment at /opt/conda/envs/ibm_ds_env:
-#
-# Name                    Version                   Build  Channel
+*response* packages in environment at /opt/conda/envs/ibm_ds_env:
+'#
+'# Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                        main  
 _openmp_mutex             5.1                       1_gnu  
 _r-mutex                  1.0.0               anacondar_1    r
