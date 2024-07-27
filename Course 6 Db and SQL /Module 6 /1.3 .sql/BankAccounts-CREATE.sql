@@ -18,8 +18,8 @@ INSERT INTO BankAccounts VALUES
 ('B003','Shoe Shop',124200),
 ('B004','Corner Shop',76000);
 
--- Retrieve all records from the table
 
-SELECT * FROM BankAccounts;
+SELECT * FROM BankAccounts
+;
 
 

@@ -16,4 +16,5 @@ INSERT INTO ShoeShop VALUES
 
 
 
-SELECT * FROM ShoeShop;
+SELECT * FROM ShoeShop
+;
