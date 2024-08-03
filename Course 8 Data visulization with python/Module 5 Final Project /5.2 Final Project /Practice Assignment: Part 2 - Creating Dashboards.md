@@ -116,9 +116,7 @@ Search/Look for `TASK` word in the script to identify places where you need to c
 
     html.H1("...............")    
 
-- Provide title of the dash application title as
-
-`Automobile Sales Statistics Dashboard`
+- Provide title of the dash application title as `Automobile Sales Statistics Dashboard`
 
 - Make the heading center aligned
 - set color as `#503D36`
@@ -328,6 +326,7 @@ Then you need to Create a different plots using `plotly.express`.
 - [Line Chart](https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkL0lCTVNraWxsc05ldHdvcmstRFYwMTAxRU4tQ291cnNlcmEvbGFicy92NC9GaW5hbF9Qcm9qZWN0L0RWMDEwMUVOLUZpbmFsX1Byb2plY3RfUGFydF8yLm1kIiwidG9vbF90eXBlIjoidGhlaWEiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTcyMTMwNjEzN30.--W8aj-dCqdh5AME3EkELWsZEnAhAarOEZJ6dK4o12Q#:~:text=and%20Pie%20charts%3A%2D-,Line%20Chart,-Bar%20Chart)
 - [Bar Chart](https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkL0lCTVNraWxsc05ldHdvcmstRFYwMTAxRU4tQ291cnNlcmEvbGFicy92NC9GaW5hbF9Qcm9qZWN0L0RWMDEwMUVOLUZpbmFsX1Byb2plY3RfUGFydF8yLm1kIiwidG9vbF90eXBlIjoidGhlaWEiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTcyMTMwNjEzN30.--W8aj-dCqdh5AME3EkELWsZEnAhAarOEZJ6dK4o12Q#:~:text=Line%20Chart-,Bar%20Chart,-Pie%20Chart)
 - [Pie Chart](https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkL0lCTVNraWxsc05ldHdvcmstRFYwMTAxRU4tQ291cnNlcmEvbGFicy92NC9GaW5hbF9Qcm9qZWN0L0RWMDEwMUVOLUZpbmFsX1Byb2plY3RfUGFydF8yLm1kIiwidG9vbF90eXBlIjoidGhlaWEiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTcyMTMwNjEzN30.--W8aj-dCqdh5AME3EkELWsZEnAhAarOEZJ6dK4o12Q#:~:text=Bar%20Chart-,Pie%20Chart,-NOTE%3A%20Label%20the)
+
 **NOTE**: Label the plots properly.
 
 **NOTE**: Once the application is up and running, take the screenshots representing the graphs for Recession report type , [each graph should be clearly captured] and save it as ‘RecessionReportgraphs.png’
