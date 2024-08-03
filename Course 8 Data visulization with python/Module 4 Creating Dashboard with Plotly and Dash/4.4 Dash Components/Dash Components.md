@@ -157,7 +157,7 @@ Segment 2 is the second html.Div(). We have two inner division where the next tw
 ### Output component - Segment 3
 Segment 3 is the last html.Div().
 
-#### Skeleon
+#### Skeleton
 
     html.Div(, style={'width':'65%'})
 
@@ -234,24 +234,24 @@ NOTE: Copy below the current code
     if __name__ == '__main__':
         app.run_server()
 
-    ## TASK 6 - Update the callback function
-    ### Callback decorator
-    - Refer examples provided here
-    - We have 5 output components added in a list. Update output component id parameter with the ids provided in the dcc.Graph() component and set the component property as figure. One sample has been added to the skeleton.
-    - Update input component id parameter with the id provided in the dcc.Input() component and component property as value.
-    ### Callback function
-    Next is to update the get_graph function. We have already added a function compute_info that will perform computation on the data using the input.
+## TASK 6 - Update the callback function
+### Callback decorator
+- Refer examples provided here
+- We have 5 output components added in a list. Update output component id parameter with the ids provided in the dcc.Graph() component and set the component property as figure. One sample has been added to the skeleton.
+- Update input component id parameter with the id provided in the dcc.Input() component and component property as value.
+### Callback function
+Next is to update the get_graph function. We have already added a function compute_info that will perform computation on the data using the input.
 
-    Mapping the returned value from the function compute_info to graph:
+Mapping the returned value from the function compute_info to graph:
 
-    - avg_car - input for carrier delay
-    - avg_weather - input for weather delay
-    - avg_NAS - input for NAS delay
-    - avg_sec - input for security delay
-    - avg_late - input for late aircraft delay
-    Code has been provided for plotting carrier delay. Follow the same process and use the above mapping to get plots for other 4 delays.
+- avg_car - input for carrier delay
+- avg_weather - input for weather delay
+- avg_NAS - input for NAS delay
+- avg_sec - input for security delay
+- avg_late - input for late aircraft delay
+Code has been provided for plotting carrier delay. Follow the same process and use the above mapping to get plots for other 4 delays.
 
-    Refer to the full code of 4.8_Flight_Delay_Time_Statistics_Dashboard.py
+Refer to the full code of 4.8_Flight_Delay_Time_Statistics_Dashboard.py
 
     # Import required libraries
     import pandas as pd
@@ -347,7 +347,7 @@ NOTE: Copy below the current code
     if __name__ == '__main__':
         app.run_server()
 
-## TASK 6 - Run the application
+## TASK 6.2 - Run the application
 - Copy and paste the below command in the terminal to run the application.
 
         python3.8 flight_delay.py
