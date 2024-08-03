@@ -22,6 +22,7 @@ Below is the expected result from the lab. Our dashboard application consists of
 
 ## Get the tool ready
 - Install python packages required to run the application. Copy and paste the below command to the terminal.
+
         python3.8 -m pip install packaging
         python3.8 -m pip install pandas dash
 
