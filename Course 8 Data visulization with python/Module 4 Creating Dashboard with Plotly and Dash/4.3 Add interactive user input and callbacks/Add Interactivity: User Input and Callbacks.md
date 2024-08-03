@@ -126,25 +126,27 @@ In the upcoming tasks, you can modify and add new components and styles to the b
 - - Input: label, dropdown input-year and style parameters
 - - Output: type of Graph line-plot
 
-    # Create a dash application layout
-    app = dash.Dash(__name__)
-    # Get the layout of the application and adjust it.
-    # Create an outer division using html.Div and add title to the dashboard using html.H1 component
-    # Add a html.Div and core input text component
-    # Finally, add graph component.
-    app.layout = html.Div(children=[html.H1(),
-                                    html.Div(["Input Year", dcc.Input(),], 
-                                    style={}),
-                                    html.Br(),
-                                    html.Br(),
-                                    html.Div(),
-                                    ])
+
+            # Create a dash application layout
+            app = dash.Dash(__name__)
+            # Get the layout of the application and adjust it.
+            # Create an outer division using html.Div and add title to the dashboard using html.H1 component
+            # Add a html.Div and core input text component
+            # Finally, add graph component.
+            app.layout = html.Div(children=[html.H1(),
+                                            html.Div(["Input Year", dcc.Input(),], 
+                                            style={}),
+                                            html.Br(),
+                                            html.Br(),
+                                            html.Div(),
+                                            ])
 
 ### Mapping to the respective Dash HTML tags:
 #### Application title add using html.H1() tag
 - Heading reference: Plotly H1 HTML Component
 - Title as Airline Performance Dashboard
 - Use style parameter for the title and make it center aligned, with color code #503D36, and font-size as 40. Check More about HTML section here.
+
 NOTE: After adding the components, you code will look like the below code.(You can copy dash application code to dash_interactivity.py script and run)
 
     # Import required libraries
@@ -303,6 +305,7 @@ In the go.Scatter() update the parameter as below:
 - - xaxis_title as Month
 - - yaxis_title as ArrDelay
 - - Refer the updated layout function [here](https://plotly.com/python/line-and-scatter/#style-scatter-plots).
+
 Refer to the full python code of dash_interactivity.py below:
 
 
