@@ -2,7 +2,7 @@
 
 ### Dataset Used
 
-![Airline Reporting Carrier On-Time Performance](https://developer.ibm.com/exchanges/data/all/airline?cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork-20297740&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ) dataset from Data Asset eXchange
+[Airline Reporting Carrier On-Time Performance](https://developer.ibm.com/exchanges/data/all/airline?cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork-20297740&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ) dataset from Data Asset eXchange
 
 ## Let's start creating dash application
 
@@ -31,13 +31,13 @@ Below is the expected result from the lab. Our dashboard application consists of
 - - Practice Exercise
 
 ### Get the tool ready
-- Install python packages required to run the application. Copy and paste the below command to the terminal.
-1 python3.8 -m pip install packaging
+- Install python packages required to run the application. Copy and paste the below command to the terminal.\
+python3.8 -m pip install packaging\
+or \
+python3.8 -m pip install pandas dash\
 
-1 python3.8 -m pip install pandas dash
 
-
-1 pip3 install httpx==0.20 dash plotly
+pip3 install httpx==0.20 dash plotly
 
 - Create a new python script, by clicking on the side tool bar explorer icon and selecting new file icon, as shown in the image below.
 ![alt text](image-1.png)
@@ -68,12 +68,12 @@ In this exercise we require the following libraries :
 
 We will first import these libraries
 
-import pandas as pd
-import plotly.graph_objects as go
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
+import pandas as pd\
+import plotly.graph_objects as go\
+import dash\
+from dash import dcc\
+from dash import html\
+from dash.dependencies import Input, Output\
 
 Now we will read the dataset using the pd.read_csv() function.
 
@@ -88,26 +88,25 @@ We defined data type of specific columns such as (Div1Airport, Div1TailNum, Div2
 - The resulting data is stored in a pandas dataframe object called airline_data, which can be used for further analysis.
 Copy the below code to the dash_interactivity.py script and review the code.
 
-# Import required libraries
-import pandas as pd
-import plotly.graph_objects as go
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
-# Read the airline data into the pandas dataframe
+\# Import required libraries\
+import pandas as pd\
+import plotly.graph_objects as go\
+import dash\
+from dash import dcc\
+from dash import html\
+from dash.dependencies import Input, Output\
+\# Read the airline data into the pandas dataframe\
 airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
+
 Now save and run this code.
 
-Copy and paste the below command in the terminal to run the code.
-
-1 python3.11 dash_interactivity.py
+Copy and paste the below command in the terminal to run the code.\
+python3.11 dash_interactivity.py
 
 After running the above code you can see the below-expected output:
-
 ![alt text](image-5.png)
 
 ## TASK 2 - Create dash application and get the layout
@@ -124,12 +123,12 @@ In the upcoming tasks, you can modify and add new components and styles to the b
 - - Input: label, dropdown input-year and style parameters
 - - Output: type of Graph line-plot
 
-# Create a dash application layout
-app = dash.Dash(__name__)
-# Get the layout of the application and adjust it.
-# Create an outer division using html.Div and add title to the dashboard using html.H1 component
-# Add a html.Div and core input text component
-# Finally, add graph component.
+\# Create a dash application layout\
+app = dash.Dash(__name__)\
+\# Get the layout of the application and adjust it.\
+\# Create an outer division using html.Div and add title to the dashboard using html.H1 component\
+\# Add a html.Div and core input text component\
+\# Finally, add graph component.\
 app.layout = html.Div(children=[html.H1(),
                                 html.Div(["Input Year", dcc.Input(),], 
                                 style={}),
@@ -137,6 +136,7 @@ app.layout = html.Div(children=[html.H1(),
                                 html.Br(),
                                 html.Div(),
                                 ])
+
 ### Mapping to the respective Dash HTML tags:
 #### Application title add using html.H1() tag
 - Heading reference: Plotly H1 HTML Component
@@ -144,21 +144,21 @@ app.layout = html.Div(children=[html.H1(),
 - Use style parameter for the title and make it center aligned, with color code #503D36, and font-size as 40. Check More about HTML section here.
 NOTE: After adding the components, you code will look like the below code.(You can copy dash application code to dash_interactivity.py script and run)
 
-# Import required libraries
-import pandas as pd
-import plotly.graph_objects as go
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
-# Read the airline data into pandas dataframe
+\# Import required libraries\
+import pandas as pd\
+import plotly.graph_objects as go\
+import dash\
+from dash import dcc\
+from dash import html\
+from dash.dependencies import Input, Output\
+\# Read the airline data into pandas dataframe\
 airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
                                    
-# Create a dash application
-app = dash.Dash(__name__)
+\# Create a dash application\
+app = dash.Dash(__name__)\
 app.layout = html.Div(children=[html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
                                 html.Div(["Input Year", dcc.Input(),], 
                                 style={}),
@@ -166,16 +166,16 @@ app.layout = html.Div(children=[html.H1('Airline Performance Dashboard',style={'
                                 html.Br(),
                                 html.Div(),
                                 ])
-# Run the app
+\# Run the app\
 if __name__ == '__main__':
     app.run_server()
 
 To run the Dash app follow the below steps
-- First, install pandas and dash using the following command in the terminal
-1 pip3.8 install pandas dash
+- First, install pandas and dash using the following command in the terminal\
+pip3.8 install pandas dash
 
-- Copy and paste the below command in the terminal to run the application.
-1 python3.8 dash_interactivity.py
+- Copy and paste the below command in the terminal to run the application.\
+python3.8 dash_interactivity.py
 
 - Observe the port number shown in the terminal.
 ![alt text](image-6.png)
@@ -184,8 +184,6 @@ To run the Dash app follow the below steps
 
 
 The app will open in a new browser tab like below:
-
-
 
 After running the above code, launch the app in a new tab and below is the expected result from the code:
 ![alt text](image-7.png)
@@ -206,19 +204,19 @@ NOTE: After adding the componenets you code will look like below code.(You can c
 
 To terminate a currently running program in the Python terminal (also known as the Python REPL), you can use the KeyboardInterrupt shortcut. This can be done by pressing the CTRL and C keys simultaneously.
 
-# Import required libraries
-import pandas as pd
-import plotly.graph_objects as go
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
-# Read the airline data into pandas dataframe
+\# Import required libraries\
+import pandas as pd\
+import plotly.graph_objects as go\
+import dash\
+from dash import dcc\
+from dash import html\
+from dash.dependencies import Input, Output\
+\# Read the airline data into pandas dataframe\
 airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
-# Create a dash application
+\# Create a dash application\
 app = dash.Dash(__name__)
                                
 app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
@@ -229,7 +227,7 @@ app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={
                                 html.Br(),
                                 html.Div(dcc.Graph(id='line-plot')),
                                 ])
-# Run the app
+\# Run the app\
 if __name__ == '__main__':
     app.run_server()
 
@@ -249,10 +247,10 @@ Steps:
 - Create graph and return it as an output
 The below code is base structure for calback decorator and function graph.
 
-# add callback decorator
+\# add callback decorator\
 @app.callback(Output(),
                Input())
-# Add computation to callback function and return graph
+\# Add computation to callback function and return graph\
 def get_graph(entered_year):
     # Select data based on the entered year
     df =  airline_data[airline_data['Year']==int(entered_year)]
@@ -264,7 +262,7 @@ def get_graph(entered_year):
     fig = go.Figure(data=)
     fig.update_layout()
     return fig
-# Run the app
+\# Run the app\
 if __name__ == '__main__':
     app.run_server()
 
@@ -282,8 +280,8 @@ if __name__ == '__main__':
 - - component-id with the value line-plot, which is the id of the output.
 - - component_property being modified is the figure property, which specifies the data and layout of the line plot.
 ### Callback function
-- Update data parameter of the go.Figure() with the scatter plot. Refer here. Sample syntax below:
-1 go.Scatter(x='----', y='----', mode='-----', marker='----)
+- Update data parameter of the go.Figure() with the scatter plot. Refer here. Sample syntax below:\
+go.Scatter(x='----', y='----', mode='-----', marker='----)
 
 In the go.Scatter() update the parameter as below:
 
@@ -298,23 +296,23 @@ In the go.Scatter() update the parameter as below:
 - - Title as Month vs Average Flight Delay Time
 - - xaxis_title as Month
 - - yaxis_title as ArrDelay
-- - Refer the updated layout function ![here](https://plotly.com/python/line-and-scatter/#style-scatter-plots).
+- - Refer the updated layout function [here](https://plotly.com/python/line-and-scatter/#style-scatter-plots).
 Refer to the full python code of dash_interactivity.py below:
 
 
-# Import required libraries
-import pandas as pd
-import plotly.graph_objects as go
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
-# Read the airline data into the pandas dataframe
+\# Import required libraries\
+import pandas as pd\
+import plotly.graph_objects as go\
+import dash\
+from dash import dcc\
+from dash import html\
+from dash.dependencies import Input, Output\
+\# Read the airline data into the pandas dataframe\
 airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
-# Create a dash application
+\# Create a dash application\
 app = dash.Dash(__name__)
                                
 app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
@@ -325,10 +323,10 @@ app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={
                                 html.Br(),
                                 html.Div(dcc.Graph(id='line-plot')),
                                 ])
-# add callback decorator
+\# add callback decorator\
 @app.callback( Output(component_id='line-plot', component_property='figure'),
                Input(component_id='input-year', component_property='value'))
-# Add computation to callback function and return graph
+\# Add computation to callback function and return graph\
 def get_graph(entered_year):
     # Select 2019 data
     df =  airline_data[airline_data['Year']==int(entered_year)]
@@ -338,7 +336,7 @@ def get_graph(entered_year):
     fig = go.Figure(data=go.Scatter(x=line_data['Month'], y=line_data['ArrDelay'], mode='lines', marker=dict(color='green')))
     fig.update_layout(title='Month vs Average Flight Delay Time', xaxis_title='Month', yaxis_title='ArrDelay')
     return fig
-# Run the app
+\# Run the app\
 if __name__ == '__main__':
     app.run_server()
 
