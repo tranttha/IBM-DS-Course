@@ -88,6 +88,7 @@ Now we will read the dataset using the pd.read_csv() function.
 - The file is encoded using ISO-8859-1 character encoding, which is a standard way of representing characters in the file.
 We defined data type of specific columns such as (Div1Airport, Div1TailNum, Div2Airport, and Div2TailNum) to be strings, which ensures that these columns are read as text instead of numbers.
 - The resulting data is stored in a pandas dataframe object called airline_data, which can be used for further analysis.
+
 Copy the below code to the dash_interactivity.py script and review the code.
 
     # Import required libraries
@@ -125,7 +126,6 @@ In the upcoming tasks, you can modify and add new components and styles to the b
 
 - - Input: label, dropdown input-year and style parameters
 - - Output: type of Graph line-plot
-
 
             # Create a dash application layout
             app = dash.Dash(__name__)
