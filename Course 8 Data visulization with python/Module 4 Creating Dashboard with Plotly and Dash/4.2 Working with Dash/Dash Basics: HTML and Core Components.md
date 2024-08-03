@@ -21,13 +21,13 @@ Below is the expected result from the lab. Our dashboard application consists of
 6. Run the app
 
 ## Get the tool ready
-- Install python packages required to run the application. Copy and paste the below command to the terminal.\
-python3.8 -m pip install packaging
+- Install python packages required to run the application. Copy and paste the below command to the terminal.
+    python3.8 -m pip install packaging
 
-python3.8 -m pip install pandas dash
+    python3.8 -m pip install pandas dash
 ![alt text](image.png)
 
-pip3 install httpx==0.20 dash plotly
+    pip3 install httpx==0.20 dash plotly
 ![alt text](image-1.png)
 
 – Create a new python script, by clicking on the side tool bar explorer icon and selecting new file icon, as shown in the image below.
@@ -47,27 +47,27 @@ Let’s start with
 - Get the chart ready
 Copy the below code to the dash_basics.py script and review the code.
 
-\# Import required packages
-import pandas as pd\
-import plotly.express as px\
-import dash\
-from dash import dcc\
-from dash import html\
+    # Import required packages
+    import pandas as pd
+    import plotly.express as px
+    import dash
+    from dash import dcc
+    from dash import html
 
 
-\# Read the airline data into pandas dataframe\
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv',
-                           encoding = "ISO-8859-1",
-                           dtype={'Div1Airport': str, 'Div1TailNum': str,
-                                  'Div2Airport': str, 'Div2TailNum': str})
+    # Read the airline data into pandas dataframe
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv',
+                            encoding = "ISO-8859-1",
+                            dtype={'Div1Airport': str, 'Div1TailNum': str,
+                                    'Div2Airport': str, 'Div2TailNum': str})
 
 
-\# Randomly sample 500 data points. Setting the random state to be 42 so that we get same result.\
-data = airline_data.sample(n=500, random_state=42)
+    # Randomly sample 500 data points. Setting the random state to be 42 so that we get same result.
+    data = airline_data.sample(n=500, random_state=42)
 
 
-\# Pie Chart Creation\
-fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance group proportion by flights')
+    # Pie Chart Creation
+    fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance group proportion by flights')
 
 ## TASK 2 - Create dash application and get the layout skeleton
 Next, we create a skeleton for our dash application. Our dashboard application has three components as seen before:
@@ -81,24 +81,24 @@ Mapping to the respective Dash HTML tags:
 Copy the below code to the dash_basics.py script and review the structure.
 NOTE: Copy below the current code
 
-\# Create a dash application\
-app = dash.Dash(__name__)
+    # Create a dash application
+    app = dash.Dash(__name__)
 
 
-\# Get the layout of the application and adjust it.
-\# Create an outer division using html.Div and add title to the dashboard using html.H1 component
-\# Add description about the graph using HTML P (paragraph) component
-\# Finally, add graph component.\
-app.layout = html.Div(children=[html.H1(),
-                               html.P(),
-                               dcc.Graph(),
-                                             
-                   ])
+    # Get the layout of the application and adjust it.
+    # Create an outer division using html.Div and add title to the dashboard using html.H1 component
+    # Add description about the graph using HTML P (paragraph) component
+    # Finally, add graph component.
+    app.layout = html.Div(children=[html.H1(),
+                                html.P(),
+                                dcc.Graph(),
+                                                
+                    ])
 
 
-\# Run the application                  \
-if __name__ == '__main__':
-   app.run_server()
+    # Run the application                  
+    if __name__ == '__main__':
+    app.run_server()
 
 ## TASK 3 - Add the application title
 Update the html.H1() tag to hold the application title.
@@ -114,7 +114,7 @@ After updating the html.H1() with the application title, the app.layout will loo
 Update the html.P() tag to hold the description of the application.
 - Description is Proportion of distance group (250 mile distance interval group) by flights.
 - Use style parameter to make the description center aligned and with color #F57241.
-\'Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}
+    'Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}
 
 After updating the html.H1() with the application title, the app.layout will look like:
 ![alt text](image-7.png)
@@ -122,7 +122,7 @@ After updating the html.H1() with the application title, the app.layout will loo
 ## TASK 5 - Update the graph
 Update figure parameter of dcc.Graph() component to add the pie chart. We have created pie chart and assigned it to fig. Let’s use that to update the figure parameter.
 
-figure=fig
+    figure=fig
 
 After updating the dcc.Graph() with the application title, the app.layout will look like:
 ![alt text](image-8.png)
@@ -131,60 +131,60 @@ Before running the application, save the file by clicking on File -> Save from t
 
 You can Refer to the entire python code here
 
-\# Import required packages\
-import pandas as pd
+    # Import required packages
+    import pandas as pd
 
-import plotly.express as px
+    import plotly.express as px
 
-import dash
+    import dash
 
-from dash import dcc
+    from dash import dcc
 
-from dash import html
-
-
-\# Read the airline data into pandas dataframe
-
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv',
-                           encoding = "ISO-8859-1",
-                           dtype={'Div1Airport': str, 'Div1TailNum': str,
-                                  'Div2Airport': str, 'Div2TailNum': str})
+    from dash import html
 
 
-\# Randomly sample 500 data points. Setting the random state to be 42 so that we get same result.
+    # Read the airline data into pandas dataframe
 
-data = airline_data.sample(n=500, random_state=42)
-
-
-\# Pie Chart Creation
-
-fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance group proportion by flights')
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv',
+                            encoding = "ISO-8859-1",
+                            dtype={'Div1Airport': str, 'Div1TailNum': str,
+                                    'Div2Airport': str, 'Div2TailNum': str})
 
 
-\# Create a dash application
+    # Randomly sample 500 data points. Setting the random state to be 42 so that we get same result.
 
-app = dash.Dash(__name__)
-
-
-\# Get the layout of the application and adjust it.
-\# Create an outer division using html.Div and add title to the dashboard using html.H1 component
-\# Add description about the graph using HTML P (paragraph) component
-\# Finally, add graph component.
-
-app.layout = html.Div(children=[html.H1('Airline Dashboard', style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
-                               html.P('Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}),
-                               dcc.Graph(figure=fig),
-                                             
-                   ])
+    data = airline_data.sample(n=500, random_state=42)
 
 
-\# Run the application                  
+    # Pie Chart Creation
 
-if __name__ == '__main__':
-   app.run_server()
+    fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance group proportion by flights')
+
+
+    # Create a dash application
+
+    app = dash.Dash(__name__)
+
+
+    # Get the layout of the application and adjust it.
+    # Create an outer division using html.Div and add title to the dashboard using html.H1 component
+    # Add description about the graph using HTML P (paragraph) component
+    # Finally, add graph component.
+
+    app.layout = html.Div(children=[html.H1('Airline Dashboard', style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
+                                html.P('Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}),
+                                dcc.Graph(figure=fig),
+                                                
+                    ])
+
+
+    # Run the application                  
+
+    if __name__ == '__main__':
+    app.run_server()
 
 ## TASK 6 - Run the application
-- Run the python file using the following command in the terminal\
+- Run the python file using the following command in the terminal
 python3.8 dash_basics.py
 - Observe the port number shown in the terminal.
 ![alt text](image-10.png)
