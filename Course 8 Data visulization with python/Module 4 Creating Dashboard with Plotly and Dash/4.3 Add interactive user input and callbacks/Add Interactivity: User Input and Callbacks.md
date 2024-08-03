@@ -12,6 +12,7 @@ Extract the average monthly arrival delay time and see how it changes over the y
 ### Expected Output
 Below is the expected result from the lab. Our dashboard application consists of three components:
 ![alt text](image.png)
+
 - Title of the application
 - Component to enter input year
 - Chart conveying the average monthly arrival delay
@@ -31,13 +32,14 @@ Below is the expected result from the lab. Our dashboard application consists of
 - - Practice Exercise
 
 ### Get the tool ready
-- Install python packages required to run the application. Copy and paste the below command to the terminal.\
-python3.8 -m pip install packaging\
-or \
-python3.8 -m pip install pandas dash\
+- Install python packages required to run the application. Copy and paste the below command to the terminal.
 
+        python3.8 -m pip install packaging  
+        python3.8 -m pip install pandas dash
 
-pip3 install httpx==0.20 dash plotly
+and 
+
+        pip3 install httpx==0.20 dash plotly
 
 - Create a new python script, by clicking on the side tool bar explorer icon and selecting new file icon, as shown in the image below.
 ![alt text](image-1.png)
@@ -68,19 +70,19 @@ In this exercise we require the following libraries :
 
 We will first import these libraries
 
-import pandas as pd\
-import plotly.graph_objects as go\
-import dash\
-from dash import dcc\
-from dash import html\
-from dash.dependencies import Input, Output\
+    import pandas as pd
+    import plotly.graph_objects as go
+    import dash
+    from dash import dcc
+    from dash import html
+    from dash.dependencies import Input, Output
 
 Now we will read the dataset using the pd.read_csv() function.
 
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str})
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
+                                encoding = "ISO-8859-1",
+                                dtype={'Div1Airport': str, 'Div1TailNum': str, 
+                                    'Div2Airport': str, 'Div2TailNum': str})
 
 - The above code reads a CSV file called airline_data.csv from a URL using pandas, a popular data analysis library in Python.
 - The file is encoded using ISO-8859-1 character encoding, which is a standard way of representing characters in the file.
@@ -88,23 +90,24 @@ We defined data type of specific columns such as (Div1Airport, Div1TailNum, Div2
 - The resulting data is stored in a pandas dataframe object called airline_data, which can be used for further analysis.
 Copy the below code to the dash_interactivity.py script and review the code.
 
-\# Import required libraries\
-import pandas as pd\
-import plotly.graph_objects as go\
-import dash\
-from dash import dcc\
-from dash import html\
-from dash.dependencies import Input, Output\
-\# Read the airline data into the pandas dataframe\
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str})
+    # Import required libraries
+    import pandas as pd
+    import plotly.graph_objects as go
+    import dash
+    from dash import dcc
+    from dash import html
+    from dash.dependencies import Input, Output
+    # Read the airline data into the pandas dataframe
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
+                                encoding = "ISO-8859-1",
+                                dtype={'Div1Airport': str, 'Div1TailNum': str, 
+                                    'Div2Airport': str, 'Div2TailNum': str})
 
 Now save and run this code.
 
-Copy and paste the below command in the terminal to run the code.\
-python3.11 dash_interactivity.py
+Copy and paste the below command in the terminal to run the code.
+
+    python3.11 dash_interactivity.py
 
 After running the above code you can see the below-expected output:
 ![alt text](image-5.png)
@@ -123,19 +126,19 @@ In the upcoming tasks, you can modify and add new components and styles to the b
 - - Input: label, dropdown input-year and style parameters
 - - Output: type of Graph line-plot
 
-\# Create a dash application layout\
-app = dash.Dash(__name__)\
-\# Get the layout of the application and adjust it.\
-\# Create an outer division using html.Div and add title to the dashboard using html.H1 component\
-\# Add a html.Div and core input text component\
-\# Finally, add graph component.\
-app.layout = html.Div(children=[html.H1(),
-                                html.Div(["Input Year", dcc.Input(),], 
-                                style={}),
-                                html.Br(),
-                                html.Br(),
-                                html.Div(),
-                                ])
+    # Create a dash application layout
+    app = dash.Dash(__name__)
+    # Get the layout of the application and adjust it.
+    # Create an outer division using html.Div and add title to the dashboard using html.H1 component
+    # Add a html.Div and core input text component
+    # Finally, add graph component.
+    app.layout = html.Div(children=[html.H1(),
+                                    html.Div(["Input Year", dcc.Input(),], 
+                                    style={}),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Div(),
+                                    ])
 
 ### Mapping to the respective Dash HTML tags:
 #### Application title add using html.H1() tag
@@ -144,38 +147,40 @@ app.layout = html.Div(children=[html.H1(),
 - Use style parameter for the title and make it center aligned, with color code #503D36, and font-size as 40. Check More about HTML section here.
 NOTE: After adding the components, you code will look like the below code.(You can copy dash application code to dash_interactivity.py script and run)
 
-\# Import required libraries\
-import pandas as pd\
-import plotly.graph_objects as go\
-import dash\
-from dash import dcc\
-from dash import html\
-from dash.dependencies import Input, Output\
-\# Read the airline data into pandas dataframe\
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str})
-                                   
-\# Create a dash application\
-app = dash.Dash(__name__)\
-app.layout = html.Div(children=[html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
-                                html.Div(["Input Year", dcc.Input(),], 
-                                style={}),
-                                html.Br(),
-                                html.Br(),
-                                html.Div(),
-                                ])
-\# Run the app\
-if __name__ == '__main__':
-    app.run_server()
+    # Import required libraries
+    import pandas as pd
+    import plotly.graph_objects as go
+    import dash
+    from dash import dcc
+    from dash import html
+    from dash.dependencies import Input, Output
+    # Read the airline data into pandas dataframe
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
+                                encoding = "ISO-8859-1",
+                                dtype={'Div1Airport': str, 'Div1TailNum': str, 
+                                    'Div2Airport': str, 'Div2TailNum': str})
+                                    
+    # Create a dash application
+    app = dash.Dash(__name__)
+    app.layout = html.Div(children=[html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
+                                    html.Div(["Input Year", dcc.Input(),], 
+                                    style={}),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Div(),
+                                    ])
+    # Run the app
+    if __name__ == '__main__':
+        app.run_server()
 
 To run the Dash app follow the below steps
-- First, install pandas and dash using the following command in the terminal\
-pip3.8 install pandas dash
+- First, install pandas and dash using the following command in the terminal
 
-- Copy and paste the below command in the terminal to run the application.\
-python3.8 dash_interactivity.py
+        pip3.8 install pandas dash
+
+- Copy and paste the below command in the terminal to run the application.
+
+        python3.8 dash_interactivity.py
 
 - Observe the port number shown in the terminal.
 ![alt text](image-6.png)
@@ -204,32 +209,32 @@ NOTE: After adding the componenets you code will look like below code.(You can c
 
 To terminate a currently running program in the Python terminal (also known as the Python REPL), you can use the KeyboardInterrupt shortcut. This can be done by pressing the CTRL and C keys simultaneously.
 
-\# Import required libraries\
-import pandas as pd\
-import plotly.graph_objects as go\
-import dash\
-from dash import dcc\
-from dash import html\
-from dash.dependencies import Input, Output\
-\# Read the airline data into pandas dataframe\
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str})
-\# Create a dash application\
-app = dash.Dash(__name__)
-                               
-app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
-                                html.Div(["Input Year: ", dcc.Input(id='input-year', value='2010', 
-                                type='number', style={'height':'50px', 'font-size': 35}),], 
-                                style={'font-size': 40}),
-                                html.Br(),
-                                html.Br(),
-                                html.Div(dcc.Graph(id='line-plot')),
-                                ])
-\# Run the app\
-if __name__ == '__main__':
-    app.run_server()
+    # Import required libraries
+    import pandas as pd
+    import plotly.graph_objects as go
+    import dash
+    from dash import dcc
+    from dash import html
+    from dash.dependencies import Input, Output
+    # Read the airline data into pandas dataframe
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
+                                encoding = "ISO-8859-1",
+                                dtype={'Div1Airport': str, 'Div1TailNum': str, 
+                                    'Div2Airport': str, 'Div2TailNum': str})
+    # Create a dash application
+    app = dash.Dash(__name__)
+                                
+    app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
+                                    html.Div(["Input Year: ", dcc.Input(id='input-year', value='2010', 
+                                    type='number', style={'height':'50px', 'font-size': 35}),], 
+                                    style={'font-size': 40}),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Div(dcc.Graph(id='line-plot')),
+                                    ])
+    # Run the app
+    if __name__ == '__main__':
+        app.run_server()
 
 After running the above code, launch the app in a new tab and below is the expected result from the code:
 ![alt text](image-8.png)
@@ -245,26 +250,27 @@ Steps:
 - Define the callback decorator
 - Define the callback function that uses the input provided to perform the computation
 - Create graph and return it as an output
+
 The below code is base structure for calback decorator and function graph.
 
-\# add callback decorator\
-@app.callback(Output(),
-               Input())
-\# Add computation to callback function and return graph\
-def get_graph(entered_year):
-    # Select data based on the entered year
-    df =  airline_data[airline_data['Year']==int(entered_year)]
-    
-    # Group the data by Month and compute the average over arrival delay time.
-    line_data = df.groupby('Month')['ArrDelay'].mean().reset_index()
-    
-    # 
-    fig = go.Figure(data=)
-    fig.update_layout()
-    return fig
-\# Run the app\
-if __name__ == '__main__':
-    app.run_server()
+    # add callback decorator
+    @app.callback(Output(),
+                Input())
+    # Add computation to callback function and return graph
+    def get_graph(entered_year):
+        # Select data based on the entered year
+        df =  airline_data[airline_data['Year']==int(entered_year)]
+        
+        # Group the data by Month and compute the average over arrival delay time.
+        line_data = df.groupby('Month')['ArrDelay'].mean().reset_index()
+        
+        # 
+        fig = go.Figure(data=)
+        fig.update_layout()
+        return fig
+    # Run the app
+    if __name__ == '__main__':
+        app.run_server()
 
 
 ## Update the callback function
@@ -280,7 +286,7 @@ if __name__ == '__main__':
 - - component-id with the value line-plot, which is the id of the output.
 - - component_property being modified is the figure property, which specifies the data and layout of the line plot.
 ### Callback function
-- Update data parameter of the go.Figure() with the scatter plot. Refer here. Sample syntax below:\
+- Update data parameter of the go.Figure() with the scatter plot. Refer here. Sample syntax below:
 go.Scatter(x='----', y='----', mode='-----', marker='----)
 
 In the go.Scatter() update the parameter as below:
@@ -300,45 +306,45 @@ In the go.Scatter() update the parameter as below:
 Refer to the full python code of dash_interactivity.py below:
 
 
-\# Import required libraries\
-import pandas as pd\
-import plotly.graph_objects as go\
-import dash\
-from dash import dcc\
-from dash import html\
-from dash.dependencies import Input, Output\
-\# Read the airline data into the pandas dataframe\
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str})
-\# Create a dash application\
-app = dash.Dash(__name__)
-                               
-app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
-                                html.Div(["Input Year: ", dcc.Input(id='input-year', value='2010', 
-                                type='number', style={'height':'50px', 'font-size': 35}),], 
-                                style={'font-size': 40}),
-                                html.Br(),
-                                html.Br(),
-                                html.Div(dcc.Graph(id='line-plot')),
-                                ])
-\# add callback decorator\
-@app.callback( Output(component_id='line-plot', component_property='figure'),
-               Input(component_id='input-year', component_property='value'))
-\# Add computation to callback function and return graph\
-def get_graph(entered_year):
-    # Select 2019 data
-    df =  airline_data[airline_data['Year']==int(entered_year)]
-    
-    # Group the data by Month and compute average over arrival delay time.
-    line_data = df.groupby('Month')['ArrDelay'].mean().reset_index()
-    fig = go.Figure(data=go.Scatter(x=line_data['Month'], y=line_data['ArrDelay'], mode='lines', marker=dict(color='green')))
-    fig.update_layout(title='Month vs Average Flight Delay Time', xaxis_title='Month', yaxis_title='ArrDelay')
-    return fig
-\# Run the app\
-if __name__ == '__main__':
-    app.run_server()
+    # Import required libraries
+    import pandas as pd
+    import plotly.graph_objects as go
+    import dash
+    from dash import dcc
+    from dash import html
+    from dash.dependencies import Input, Output
+    # Read the airline data into the pandas dataframe
+    airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
+                                encoding = "ISO-8859-1",
+                                dtype={'Div1Airport': str, 'Div1TailNum': str, 
+                                    'Div2Airport': str, 'Div2TailNum': str})
+    # Create a dash application
+    app = dash.Dash(__name__)
+                                
+    app.layout = html.Div(children=[ html.H1('Airline Performance Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}),
+                                    html.Div(["Input Year: ", dcc.Input(id='input-year', value='2010', 
+                                    type='number', style={'height':'50px', 'font-size': 35}),], 
+                                    style={'font-size': 40}),
+                                    html.Br(),
+                                    html.Br(),
+                                    html.Div(dcc.Graph(id='line-plot')),
+                                    ])
+    # add callback decorator
+    @app.callback( Output(component_id='line-plot', component_property='figure'),
+                Input(component_id='input-year', component_property='value'))
+    # Add computation to callback function and return graph
+    def get_graph(entered_year):
+        # Select 2019 data
+        df =  airline_data[airline_data['Year']==int(entered_year)]
+        
+        # Group the data by Month and compute average over arrival delay time.
+        line_data = df.groupby('Month')['ArrDelay'].mean().reset_index()
+        fig = go.Figure(data=go.Scatter(x=line_data['Month'], y=line_data['ArrDelay'], mode='lines', marker=dict(color='green')))
+        fig.update_layout(title='Month vs Average Flight Delay Time', xaxis_title='Month', yaxis_title='ArrDelay')
+        return fig
+    # Run the app
+    if __name__ == '__main__':
+        app.run_server()
 
 After running the above code, launch the app in a new tab and below is the expected final result from the code:
 ![alt text](image-9.png)
