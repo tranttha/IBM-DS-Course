@@ -22,12 +22,14 @@ Below is the expected result from the lab. Our dashboard application consists of
 
 ## Get the tool ready
 - Install python packages required to run the application. Copy and paste the below command to the terminal.
-    python3.8 -m pip install packaging
 
+    python3.8 -m pip install packaging
     python3.8 -m pip install pandas dash
+
 ![alt text](image.png)
 
     pip3 install httpx==0.20 dash plotly
+
 ![alt text](image-1.png)
 
 – Create a new python script, by clicking on the side tool bar explorer icon and selecting new file icon, as shown in the image below.
@@ -45,6 +47,7 @@ Let’s start with
 - Importing necessary libraries
 - Reading and sampling 500 random data points
 - Get the chart ready
+
 Copy the below code to the dash_basics.py script and review the code.
 
     # Import required packages
@@ -68,6 +71,7 @@ Copy the below code to the dash_basics.py script and review the code.
 
     # Pie Chart Creation
     fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance group proportion by flights')
+
 
 ## TASK 2 - Create dash application and get the layout skeleton
 Next, we create a skeleton for our dash application. Our dashboard application has three components as seen before:
@@ -129,17 +133,13 @@ After updating the dcc.Graph() with the application title, the app.layout will l
 Before running the application, save the file by clicking on File -> Save from the menu bar.
 ![alt text](image-9.png)
 
-You can Refer to the entire python code here
+You can Refer to the entire python code here\
 
     # Import required packages
     import pandas as pd
-
     import plotly.express as px
-
     import dash
-
     from dash import dcc
-
     from dash import html
 
 
@@ -185,7 +185,9 @@ You can Refer to the entire python code here
 
 ## TASK 6 - Run the application
 - Run the python file using the following command in the terminal
-python3.8 dash_basics.py
+
+    python3.8 dash_basics.py
+
 - Observe the port number shown in the terminal.
 ![alt text](image-10.png)
 Click on the Launch Application option from the side menu bar.Provide the port number and click OK
