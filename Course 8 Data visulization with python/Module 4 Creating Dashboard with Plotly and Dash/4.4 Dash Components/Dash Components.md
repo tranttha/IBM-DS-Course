@@ -14,7 +14,7 @@ Dashboard Components
 - Monthly average national air system delay by reporting airline for the given year.
 - Monthly average security delay by reporting airline for the given year.
 - Monthly average late aircraft delay by reporting airline for the given year.
-NOTE: Year range should be between 2010 and 2020
+**NOTE**: Year range should be between 2010 and 2020
 
 ### Expected Output
 Below is the expected result from the lab. Our dashboard application consists of three components:
@@ -93,7 +93,7 @@ Mapping to the respective Dash HTML tags:
 - 5 charts split into three segments. Each segment has a layout division added using html.Div() and chart added using dcc.Graph() tag inside the layout division.
 Copy the below code to the flight_delay.py script and review the structure.
 
-NOTE: Copy below the current code
+**NOTE**: Copy below the current code
 
     # Create a dash application
     app = dash.Dash(__name__)
@@ -115,7 +115,7 @@ NOTE: Copy below the current code
                                     
                                     html.Div(, style={'width':'65%'})
                                     ])
-NOTE: We are using display as flex for two outer divisions to get graphs side by side in a row.
+**NOTE**: We are using display as flex for two outer divisions to get graphs side by side in a row.
 
 ## TASK 3 - Update layout components
 ### Application title
@@ -141,7 +141,7 @@ Segment 1 is the first html.Div(). We have two inner division where first two gr
 ### Output component - Segment 2
 Segment 2 is the second html.Div(). We have two inner division where the next two graphs will be placed.
 
-#### Skeleon
+#### Skeleton
 
     html.Div([
             html.Div(),
@@ -168,7 +168,7 @@ Below is the function that gets input year and data, perform computation for cre
 
 Copy the below code to the flight_delay.py script and review the structure.
 
-NOTE: Copy below the current code
+**NOTE**: Copy below the current code
 
     """ Compute_info function description
     This function takes in airline data and selected year as an input and performs computation for creating charts and plots.
@@ -201,7 +201,7 @@ Steps:
 - Run the application
 Copy the below code to the flight_delay.py script and review the structure.
 
-NOTE: Copy below the current code
+**NOTE**: Copy below the current code
 
     # Callback decorator
     @app.callback( [
