@@ -23,10 +23,12 @@ Below is the expected result from the lab. Our dashboard application consists of
 ## Get the tool ready
 - Install python packages required to run the application. Copy and paste the below command to the terminal.
 
+\t
     python3.8 -m pip install packaging
     python3.8 -m pip install pandas dash
 
 ![alt text](image.png)
+
 
     pip3 install httpx==0.20 dash plotly
 
@@ -109,7 +111,7 @@ Update the html.H1() tag to hold the application title.
 - Application title is Airline Dashboard
 - Use style parameter provided below to make the title center aligned, with color code #503D36, and font-size as 40
 
-'Airline Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}
+    'Airline Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}
 
 After updating the html.H1() with the application title, the app.layout will look like:
 ![alt text](image-6.png)
@@ -118,6 +120,7 @@ After updating the html.H1() with the application title, the app.layout will loo
 Update the html.P() tag to hold the description of the application.
 - Description is Proportion of distance group (250 mile distance interval group) by flights.
 - Use style parameter to make the description center aligned and with color #F57241.
+
     'Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}
 
 After updating the html.H1() with the application title, the app.layout will look like:
@@ -185,6 +188,7 @@ You can Refer to the entire python code here\
 
 ## TASK 6 - Run the application
 - Run the python file using the following command in the terminal
+
 
     python3.8 dash_basics.py
 
