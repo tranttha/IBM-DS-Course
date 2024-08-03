@@ -21,13 +21,13 @@ Below is the expected result from the lab. Our dashboard application consists of
 6. Run the app
 
 ## Get the tool ready
-- Install python packages required to run the application. Copy and paste the below command to the terminal.
+- Install python packages required to run the application. Copy and paste the below command to the terminal.\
 
-\t
+
     python3.8 -m pip install packaging
     python3.8 -m pip install pandas dash
 
-![alt text](image.png)
+![alt text](image.png)\
 
 
     pip3 install httpx==0.20 dash plotly
@@ -50,7 +50,7 @@ Let’s start with
 - Reading and sampling 500 random data points
 - Get the chart ready
 
-Copy the below code to the dash_basics.py script and review the code.
+Copy the below code to the dash_basics.py script and review the code.\
 
     # Import required packages
     import pandas as pd
@@ -85,7 +85,8 @@ Mapping to the respective Dash HTML tags:
 - Description added using html.P() tag
 - Chart added using dcc.Graph() tag
 Copy the below code to the dash_basics.py script and review the structure.
-NOTE: Copy below the current code
+NOTE: Copy below the current code\
+
 
     # Create a dash application
     app = dash.Dash(__name__)
@@ -106,10 +107,12 @@ NOTE: Copy below the current code
     if __name__ == '__main__':
     app.run_server()
 
+
 ## TASK 3 - Add the application title
 Update the html.H1() tag to hold the application title.
 - Application title is Airline Dashboard
-- Use style parameter provided below to make the title center aligned, with color code #503D36, and font-size as 40
+- Use style parameter provided below to make the title center aligned, with color code #503D36, and font-size as 40\
+
 
     'Airline Dashboard',style={'textAlign': 'center', 'color': '#503D36', 'font-size': 40}
 
@@ -119,7 +122,7 @@ After updating the html.H1() with the application title, the app.layout will loo
 ## TASK 4 - Add the application description
 Update the html.P() tag to hold the description of the application.
 - Description is Proportion of distance group (250 mile distance interval group) by flights.
-- Use style parameter to make the description center aligned and with color #F57241.
+- Use style parameter to make the description center aligned and with color #F57241.\
 
     'Proportion of distance group (250 mile distance interval group) by flights.', style={'textAlign':'center', 'color': '#F57241'}
 
@@ -127,7 +130,7 @@ After updating the html.H1() with the application title, the app.layout will loo
 ![alt text](image-7.png)
 
 ## TASK 5 - Update the graph
-Update figure parameter of dcc.Graph() component to add the pie chart. We have created pie chart and assigned it to fig. Let’s use that to update the figure parameter.
+Update figure parameter of dcc.Graph() component to add the pie chart. We have created pie chart and assigned it to fig. Let’s use that to update the figure parameter.\
 
     figure=fig
 
@@ -187,7 +190,7 @@ You can Refer to the entire python code here\
     app.run_server()
 
 ## TASK 6 - Run the application
-- Run the python file using the following command in the terminal
+- Run the python file using the following command in the terminal\
 
 
     python3.8 dash_basics.py
