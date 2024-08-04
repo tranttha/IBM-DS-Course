@@ -1,7 +1,7 @@
 # !pip install packaging
 # !pip install pandas dash
 # !pip3 install httpx==0.20 dash plotly
-# pip3 install httpx==0.20 dash plotly
+# !pip3 install httpx==0.20 dash plotly
 
 
 # TASK 1
@@ -32,47 +32,52 @@ app = dash.Dash(__name__)
 # Create an outer division using html.Div and add title to the dashboard using html.H1 component
 # Add description about the graph using HTML P (paragraph) component
 # Finally, add graph component.
-app.layout = html.Div(children=[html.H1( 'Airline Dashboard',
-                                        style={'textAlign': 'center',
-                                            'color': '#503D36',
-                                            'font-size': 40}),
+
+# TASK 3
+# Add a title to the dashboard
+title_change = ('Airline On-time Performance Dashboard',
+                style={'textAlign': 'center',
+                        'color': '#503D36',
+                        'font-size': 50})
+app.layout = html.Div(children=[html.H1( title_change), # Ex 1
                                 html.P('Proportion of distance group (250 mile distance interval group) by flights.', 
+                                       # TASK 4
+                                       # Add description about the graph
+
                                        style={'textAlign':'center', 'color': '#F57241'}
 ),
                                 dcc.Graph(figure=fig),
+                                # TASK 5
+                                # Add the pie chart to the dashboard
                                                
                     ])
 
 # Run the application                   
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(host='0.0.0.0', port =8050)
 
-# TASK 3
-# Add a title to the dashboard
 
-# TASK 4
-# Add description about the graph
-
-# TASK 5
-# Add the pie chart to the dashboard
 
 # TASK 6
-# !python3.8 dash_basics.py
+# !python3 dash_basics.py
 
 
 # Exercise : Practice Tasks
 # You will practice some tasks to update the dashboard.
 
-# Change the title to the dashboard from “Airline Dashboard” to “Airline On-time Performance Dashboard” using HTML H1 component and font-size as 50.
-title_change = ('Airline On-time Performance Dashboard',
-                style={'textAlign': 'center',
-                        'color': '#503D36',
-                        'font-size': 50})
-app.layout = html.Div(children=[html.H1( title_change)])
+# 1 Change the title to the dashboard from “Airline Dashboard” to “Airline On-time Performance Dashboard” using HTML H1 component and font-size as 50.
+# title_change = ('Airline On-time Performance Dashboard',
+#                 style={'textAlign': 'center',
+#                         'color': '#503D36',
+#                         'font-size': 50})
+## DONE 
 
-# Save the above changes and relaunch the dashboard application to see the updated dashboard title.
-app.reload()
+# app.layout = html.Div(children=[html.H1( title_change)])
 
-# Write a command to stop the running app in the terminal
-app.status = 'stop'
+# 2 Save the above changes and relaunch the dashboard application to see the updated dashboard title.
 
+
+# # Write a command to stop the running app in the terminal
+# app.status = 'stop'
+
+# print(python._version())
