@@ -277,36 +277,38 @@ The below code is base structure for calback decorator and function graph.
 
 ## Update the callback function
 ### Callback decorator
-- Refer to examples provided here
+- Refer to examples provided [here](https://dash.plotly.com/basic-callbacks)
 
-- Input() function takes two parameters:
+- `Input()` function takes two parameters:
 
-- - component-id with the value input-year, which is the ID of the input dropdown.
-- - component_property being accessed is the value property, which represents the year entered by the user.
-- Output()function takes two parameters:
+- - `component-id` with the value `input-year`, which is the ID of the input dropdown.
+- - `component_property` being accessed is the `value` property, which represents the year entered by the user.
+- `Output()`function takes two parameters:
 
-- - component-id with the value line-plot, which is the id of the output.
-- - component_property being modified is the figure property, which specifies the data and layout of the line plot.
+- - `component-id` with the value `line-plot`, which is the id of the output.
+- - `component_property` being modified is the `figure` property, which specifies the data and layout of the line plot.
 ### Callback function
-- Update data parameter of the go.Figure() with the scatter plot. Refer here. Sample syntax below:
-go.Scatter(x='----', y='----', mode='-----', marker='----)
+- Update `data` parameter of the `go.Figure()` with the scatter plot. Refer [here](). 
+
+Sample syntax below:
+    go.Scatter(x='----', y='----', mode='-----', marker='----)
 
 In the go.Scatter() update the parameter as below:
 
-- Update x as line_data['Month']
+- Update x as `line_data['Month']`
 
-- Update y as line_data['ArrDelay']
+- Update y as  `line_data['ArrDelay']`
 
-- Update mode as lines, and marker as dict(color='green')
+- Update `mode` as `lines`, and `marker` as `dict(color='green')`
 
-- Update fig.update_layout with title, xaxis_title, and yaxis_title parameters.
+- Update `fig.update_layout` with title, xaxis_title, and yaxis_title parameters.
 
-- - Title as Month vs Average Flight Delay Time
-- - xaxis_title as Month
-- - yaxis_title as ArrDelay
+- - Title as `Month vs Average Flight Delay Time`
+- - `xaxis_title` as Month
+- - `yaxis_title` as ArrDelay
 - - Refer the updated layout function [here](https://plotly.com/python/line-and-scatter/#style-scatter-plots).
 
-Refer to the full python code of dash_interactivity.py below:
+Refer to the full python code of `dash_interactivity.py` below:
 
 
     # Import required libraries
