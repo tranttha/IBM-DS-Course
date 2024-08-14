@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import dash
 import more_itertools
 from dash import dcc
@@ -14,7 +20,7 @@ data = pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain
 app = dash.Dash(__name__)
 
 # Set the title of the dashboard
-app.title = "Automobile Statistics Dashboard"
+#app.title = "Automobile Statistics Dashboard"
 
 #---------------------------------------------------------------------------------
 # Create the dropdown menu options
@@ -28,12 +34,12 @@ year_list = [i for i in range(1980, 2024, 1)]
 # Create the layout of the app
 app.layout = html.Div([
     #TASK 2.1 Add title to the dashboard
-    html.H1("Automobile Sales Statistics Dashboard",),#Include style for title
+    html.H1("..............."),#Include style for title
     #TASK 2.2: Add two dropdown menus
     html.Div([
         html.Label("Select Statistics:"),
         dcc.Dropdown(
-            id='dropdown-statistics',
+            id='...........',
             options=...................,
             value='.................',
             placeholder='.................'
