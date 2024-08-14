@@ -27,47 +27,47 @@ dropdown_options = [
 #---------------------------------------------------------------------------------------
 # Create the layout of the app
 app.layout = html.Div([
-
-    #TASK 2.1 Add title to the dashboard
+    #  2.1 Add title to the dashboard
     html.H1('Automobile Sales Statistics Dashboard',\
                     style={'textAlign': 'center', 'color': '#503D36', 'font-size': 24}),#Include style for title
-    
-    #TASK 2.2: Add two dropdown menus
-    html.Div([
-        html.Label("Select Statistics:"),
-        dcc.Dropdown(
-            id='dropdown-statistics',
-            options={'Yearly Statistics':'Yearly Statistics', 'Recession Period Statistics':'Recession Period Statistics'},
-            value='Select Statistics',
-            placeholder='Select a report type',
-            style ={'width':'80%', 'padding': '3px', 'font-size' : '20px',  'text-align-last' : 'center'}
-        )
-    ]),
-    html.Div(dcc.Dropdown(
-            id='select-year',
-            options=[{'label': i, 'value': i} for i in year_list],
-            value= year_list 
-        )),
-    html.Div([#TASK 2.3: Add a division for output display
-    html.Div(id='output-container', className='chart-grid', style={'display': 'flex'}),])
-])
-#TASK 2.4: Creating Callbacks
+# ])
+    # 2.2: Add two dropdown menus
+        html.Div([
+            html.Label("Select Statistics:"),
+            dcc.Dropdown(
+                id='dropdown-statistics',
+                options=dropdown_options,
+                value='Select Statistics',
+                placeholder='Select a report type',
+                style ={'width':'80%', 'padding': '3px', 'font-size' : '20px',  'text-align-last' : 'center'}
+            )
+        ]),
+        html.Div(dcc.Dropdown(
+                id='select-year',
+                options=[{'label': i, 'value': i} for i in year_list],
+                value= year_list,
+                disabled=False 
+            )),
+
+    # 2.3: Add a division for output display
+    html.Div(id='output-container', className='chart-grid', style={'display': 'flex'})
+    ])
+
+# 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
 @app.callback(
     Output(component_id='select-year', component_property='disabled'),
     Input(component_id='dropdown-statistics',component_property='value'))
 
 def update_input_container(selected_statistics):
-    if selected_statistics =='Yearly Statistics': 
-        return False
-    else: 
-        return True
+    return selected_statistics != 'Yearly Statistics'  # Simplified conditional return
 
 #Callback for plotting
-# Define the callback function to update the input container based on the selected statistics
+
 @app.callback(
     Output(component_id='output-container', component_property='children'),
-    [Input(component_id='dropdown-statistics', component_property='value'), Input(component_id='select-year', component_property='value')])
+    [Input(component_id='dropdown-statistics', component_property='value'), \
+    Input(component_id='select-year', component_property='value')])
 
 
 def update_output_container(selected_statistics, input_year):
@@ -75,7 +75,7 @@ def update_output_container(selected_statistics, input_year):
         # Filter the data for recession periods
         recession_data = data[data['Recession'] == 1]
         
-#TASK 2.5: Create and display graphs for Recession Report Statistics
+# 2.5: Create and display graphs for Recession Report Statistics
 
 #Plot 1 Automobile sales fluctuate over Recession Period (year wise)
         # use groupby to create relevant data for plotting
@@ -118,7 +118,7 @@ def update_output_container(selected_statistics, input_year):
         x='unemployment_rate',
         y='Automobile_Sales',
         color='Vehicle_Type',
-        barmode='group',
+        # barmode='group',
         labels={
             'unemployment_rate': 'Unemployment Rate',
             'Automobile_Sales': 'Average Automobile Sales',
@@ -126,12 +126,20 @@ def update_output_container(selected_statistics, input_year):
         title='Effect of Unemployment Rate on Vehicle Type and Sales'))
 
 
-        return [
-            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
-            html.Div(className='chart-item', children=[html.Div(children= R_chart3),html.Div(children=R_chart4) ],style={'display': 'flex'})
-            ]
+        return  [
+            html.Div(className='chart-row', children=[
+                html.Div(className='chart-item', children=R_chart1, style={'width': '48%', 'padding': '1%', 'display': 'flex'}),
+                html.Div(className='chart-item', children=R_chart2, style={'width': '48%', 'padding': '1%', 'display': 'flex'})
+            ]),
+            html.Div(className='chart-row', children=[
+                html.Div(className='chart-item', children=R_chart3, style={'width': '48%', 'padding': '1%', 'display': 'flex'}),
+                html.Div(className='chart-item', children=R_chart4, style={'width': '48%', 'padding': '1%', 'display': 'flex'})
+            ])
 
-# TASK 2.6: Create and display graphs for Yearly Report Statistics
+        ]
+
+
+#  2.6: Create and display graphs for Yearly Report Statistics
  # Yearly Statistic Report Plots
     # Check for Yearly Statistics.                             
     elif (input_year and selected_statistics=='Yearly Statistics') :
@@ -172,12 +180,19 @@ def update_output_container(selected_statistics, input_year):
                 )
     )
 
-#TASK 2.6: Returning the graphs for displaying Yearly data
+# 2.6: Returning the graphs for displaying Yearly data
         return [
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart1),html.Div(children=Y_chart2)],style={'display':'flex'}),
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display': 'flex'})
-                ]
-        
+            html.Div(className='chart-row', children=[
+                html.Div(className='chart-item', children=Y_chart1, style={'width': '48%', 'padding': '1%', 'display': 'flex'}),
+                html.Div(className='chart-item', children=Y_chart2, style={'width': '48%', 'padding': '1%', 'display': 'flex'})
+            ]),
+
+            html.Div(className='chart-row', children=[
+                html.Div(className='chart-item', children=Y_chart3, style={'width': '48%', 'padding': '1%', 'display': 'flex'}),
+                html.Div(className='chart-item', children=Y_chart4, style={'width': '48%', 'padding': '1%', 'display': 'flex'})
+            ])
+
+        ]
     else:
         return None
 
